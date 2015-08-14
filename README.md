@@ -6,22 +6,52 @@
 
 ![](http://camaleon.tuzitio.com/media/132/logo2.png)
 
+# Camaleon CMS (It adapts to your needs)
+This is the gem version of Camaleon CMS
+
 # Requirements
 * Rails 4+
 * Mysql 5+ or Sqlite or Postgres
 * Ruby 1.9.3+
 * Imagemagick
 
+# Installation by Terminal
+* Create your rails project
+  ```
+  rails new my_project
+  ```
+* Add the gem in your Gemfile
+  ```
+  gem 'camaleon_cms', :git => 'https://github.com/owen2345/camaleon-cms-gem.git'
+  ```
+* Install the gem
+  ```
+  bundle install
+  ```
+* Install the CMS (This will copy some basic templates and plugins in your project)
+  ```
+  rails generate camaleon_cms:install
+  ```
+* Install required Gems for CMS and basic plugins
+  ```
+  bundle install
+  ```
+* Create database structure
+  ```
+  rake db:migrate
+  ```
+* Start your server
+  ```
+  rails server
+  ```
 
-# Camaleon CMS (It adapts to your needs)
-Camaleon CMS is a dynamic and advanced content management system based on Ruby on Rails 4 and Ruby 1.9.3+. 
-
-Camaleon CMS is an alternative to wordpress for Ruby on Rails developers.
-
-Camaleon CMS is a flexible manager where you can build your content structure without coding anything by custom fields and custom contents type.
+# About Camaleon CMS
+* Camaleon CMS is a dynamic and advanced content management system based on Ruby on Rails 4 and Ruby 1.9.3+.
+* Camaleon CMS is an alternative to wordpress for Ruby on Rails developers.
+* Camaleon CMS is a flexible manager where you can build your content structure without coding anything by custom fields and custom contents type.
 
 ## Camaleon CMS is FREE and Open source
-released on July, 2015 and tested previously with more than 20 projects by 6 months.
+Released on July, 2015 and tested previously with more than 20 projects by 6 months.
 
 ![](http://camaleon.tuzitio.com/media/132/multi-language.png)
 
@@ -31,7 +61,7 @@ released on July, 2015 and tested previously with more than 20 projects by 6 mon
 * Extend or customize the functionalities by plugins
 * Manage your content visualization by themes
 * Advanced User roles
-* Other features:
+* Other:
   - Shortcodes
   - Widgets
   - Drag and Drop / Sortable / Multi level menus
@@ -69,13 +99,12 @@ released on July, 2015 and tested previously with more than 20 projects by 6 mon
 * Contact forms
 * Cache content
 * Content reorder
-* many others
+* Many others
 
 ## Demonstration
 http://camaleon.tuzitio.com/plugins/demo_manage/
 
-If you have problems, please enter an issue here.
-https://github.com/owen2345/camaleon-cms/issues
+If you have problems, please enter an issue here: https://github.com/owen2345/camaleon-cms/issues
 
 If you need support, need some extra functionality or need plugins, please contact us on:
 * Site: http://camaleon.tuzitio.com/
@@ -93,7 +122,6 @@ http://camaleon.tuzitio.com/license.html/
 ## Coming soon
 * Plugins Store (anybody can upload plugins to this store)
 * Themes Store (anybody can upload themes to this store)
-* Moving files into engine
 
 ## Contributing
 * Fork it.

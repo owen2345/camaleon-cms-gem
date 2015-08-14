@@ -90,9 +90,10 @@ class PluginRoutes
   # return system information
   def self.system_info
     r = cache_variable("system_info");  return r unless r.nil?
-    system_file = File.join(apps_dir, "..", '..', "config", "system.json")
-    return {} unless File.exist?(system_file)
-    res = JSON.parse(File.read(system_file)).with_indifferent_access
+    res = {}
+    res = JSON.parse(File.read(File.join($camaleon_engine_dir, "config", "system.json"))).with_indifferent_access if $camaleon_engine_dir.present?
+    return cache_variable("system_info", res) unless File.exist?(system_file = File.join(apps_dir, "..", '..', "config", "system.json"))
+    res = res.merge(JSON.parse(File.read(system_file)).with_indifferent_access)
     res["key"] = "system"
     res["path"] = ''
     res["kind"] = "system"
@@ -237,7 +238,7 @@ class PluginRoutes
     if camaleon_gem = get_gem('camaleon')
       res << File.read(File.join(camaleon_gem.gem_dir, "Gemfile")).gsub("source 'https://rubygems.org'", "")
     else
-      res << File.read(File.join("/www/rails/camaleon_cms", "Gemfile")).gsub("source 'https://rubygems.org'", "")
+      res << File.read(File.join(apps_dir, "..", "..", "lib", "Gemfile_camaleon")).gsub("source 'https://rubygems.org'", "")
     end
 
     p_dir = File.join(apps_dir, "plugins")

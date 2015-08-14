@@ -8,8 +8,9 @@ module CamaleonCms
 
       def create_initializer_file
         apps_folder = Rails.root.join("app", "apps").to_s
-        copy_file "../../../../config/system.json", "config/system.json"
+        copy_file "system.json", "config/system.json"
         copy_file "plugin_routes.rb", "lib/plugin_routes.rb"
+        copy_file "../../../../Gemfile", "lib/Gemfile_camaleon"
         directory("apps", apps_folder)
         append_to_file 'Gemfile' do
           "\n\n#################### Camaleon CMS include all gems for plugins and themes #################### \nrequire './lib/plugin_routes' \ninstance_eval(PluginRoutes.draw_gems)"
