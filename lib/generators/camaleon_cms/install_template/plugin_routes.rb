@@ -238,7 +238,8 @@ class PluginRoutes
     if camaleon_gem = get_gem('camaleon')
       res << File.read(File.join(camaleon_gem.gem_dir, "Gemfile")).gsub("source 'https://rubygems.org'", "")
     else
-      res << File.read(File.join(apps_dir, "..", "..", "lib", "Gemfile_camaleon")).gsub("source 'https://rubygems.org'", "")
+      gem_file = File.join(apps_dir, "..", "..", "lib", "Gemfile_camaleon")
+      res << File.read(gem_file).gsub("source 'https://rubygems.org'", "") if File.exist?(gem_file)
     end
 
     p_dir = File.join(apps_dir, "plugins")
