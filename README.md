@@ -7,7 +7,7 @@
 ![](http://camaleon.tuzitio.com/media/132/logo2.png)
 
 # Camaleon CMS (It adapts to your needs)
-This is the gem version of Camaleon CMS
+This is the gem version of Camaleon CMS (IN TESTING)
 
 # Requirements
 * Rails 4+
@@ -17,30 +17,37 @@ This is the gem version of Camaleon CMS
 
 # Installation by Terminal
 * Create your rails project
+
   ```
   rails new my_project
   ```
 * Add the gem in your Gemfile
+  
   ```
   gem 'camaleon_cms', :git => 'https://github.com/owen2345/camaleon-cms-gem.git'
   ```
 * Install the gem
+  
   ```
   bundle install
   ```
 * Install the CMS (This will copy some basic templates and plugins in your project)
+  
   ```
   rails generate camaleon_cms:install
   ```
 * Install required Gems for CMS and basic plugins
+  
   ```
   bundle install
   ```
 * Create database structure
+  
   ```
   rake db:migrate
   ```
 * Start your server
+  
   ```
   rails server
   ```
