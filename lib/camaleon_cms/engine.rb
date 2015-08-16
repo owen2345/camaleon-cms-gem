@@ -2,6 +2,23 @@ $camaleon_engine_dir = File.expand_path("../../../", __FILE__)
 Dir[File.join($camaleon_engine_dir, "lib", "ext", "**", "*.rb")].each{ |f| require f }
 module CamaleonCms
   class Engine < ::Rails::Engine
+    config.before_initialize do |app|
+      app.console do
+        begin
+          include SiteHelper
+          # include PluginsHelper
+          # include HooksHelper
+          site = Site.first.decorate
+          site_console_switch(site)
+          puts "*************** Camaleon CMS Console Added for \"#{site.the_title}\", change this by: ***************"
+          puts "- include SiteHelper "
+          puts "- site_console_switch(site = nil)"
+        rescue => e
+          puts "**************** Errors starting camaleon cms in console: #{e.message}"
+        end
+      end
+    end
+
     initializer :append_migrations do |app|
       unless defined?(PluginRoutes)
         require File.join($camaleon_engine_dir, "lib", "generators", "camaleon_cms", "install_template", "plugin_routes").to_s
@@ -19,7 +36,9 @@ module CamaleonCms
         app.config.encoding = "utf-8"
 
         #multiple route files
-        Dir[File.join(engine_dir, "config", "routes", "*.rb")].each{|r| app.routes_reloader.paths.unshift(r) }
+        app.routes_reloader.paths.push(File.join(engine_dir, "config", "routes", "admin.rb"))
+        app.routes_reloader.paths.push(File.join(engine_dir, "config", "routes", "frontend.rb"))
+        # Dir[File.join(engine_dir, "config", "routes", "*.rb")].each{|r| app.routes_reloader.paths.unshift(r) }
 
         # cache control
         app.config.cache_store = :file_store, Rails.root.join("tmp","cache","vars")

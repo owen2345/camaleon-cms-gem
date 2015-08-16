@@ -38,7 +38,7 @@ Site.all.each do |site|
   end
 
   # hooks
-  c = ApplicationController.new
+  c = CamaleonController.new
   c.instance_eval do
     @current_site = site
     @_hooks_skip = []
