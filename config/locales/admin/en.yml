@@ -71,7 +71,7 @@ en:
         updated: 'The comment has been updated.'
 
       tooltip:
-        approved_comment: 'Approved Comment'
+        approved_comment: 'Approve Comment'
         comment_pending: 'Comment To Pending'
         comment_spam: 'Comment To Spam'
         reply_comment: 'Reply Comment'
