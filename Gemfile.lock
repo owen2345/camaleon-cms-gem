@@ -88,7 +88,6 @@ DEPENDENCIES
   meta-tags
   mini_magick
   mobu
-  nokogiri
   protected_attributes
   rufus-scheduler (~> 3.1.1)
   will_paginate
