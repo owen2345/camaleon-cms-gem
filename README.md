@@ -2,7 +2,7 @@
 ![](https://img.shields.io/badge/Rails-4%2B-green.svg)
 ![](https://img.shields.io/badge/Ruby-1.9.3%2B-green.svg)
 
-[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/owen2345/camaleon-cms)
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/owen2345/Camaleon-CMS-Sample)
 
 ![](http://camaleon.tuzitio.com/media/132/logo2.png)
 
