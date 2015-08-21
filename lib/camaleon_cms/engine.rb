@@ -31,8 +31,11 @@ module CamaleonCms
         app.config.time_zone = PluginRoutes.system_info[:time_zone]
         PluginRoutes.all_apps.each{ |info| app.config.i18n.load_path += Dir[File.join(info["path"], "config", "locales", '*.{rb,yml}')] }
 
+        # assets
         app.config.assets.paths << Rails.root.join("app", "apps")
         app.config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
+        app.config.assets.paths << File.join($camaleon_engine_dir, "app", "apps")
+        app.config.assets.paths << File.join($camaleon_engine_dir, 'app', 'assets', 'fonts')
         app.config.encoding = "utf-8"
 
         #multiple route files

@@ -16,6 +16,7 @@ class Apps::PluginsFrontController < FrontendController
     return render_error(404) unless @plugin.active?
     lookup_context.prefixes.prepend(params[:controller].sub("plugins/#{plugin_name}", "#{plugin_name}/views"))
     self.append_view_path(Rails.root.join("app", 'apps', "plugins"))
+    self.append_view_path(File.join($camaleon_engine_dir, "app", 'apps', "plugins"))
   end
 
 end
