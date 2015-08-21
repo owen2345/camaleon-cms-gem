@@ -69,9 +69,6 @@ class CamaleonController < ApplicationController
     hooks_run("app_before_load")
 
     request.env.except!('HTTP_X_FORWARDED_HOST') if request.env['HTTP_X_FORWARDED_HOST'] # just drop the variable
-
-    # views path for plugins
-    self.append_view_path(Rails.root.join("app", "apps", 'plugins'))
   end
 
   def after_actions
