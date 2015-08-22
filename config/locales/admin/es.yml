@@ -308,7 +308,7 @@ es:
       twitter_card: "Etiqueta Twitter"
       author: "Nombre de Autor"
       seo_setting: "Posicionamiento Web."
-      email_settings: "Configuración de Correo"
+      email_settings: "Configuración de Correo (SMTP)"
       message:
         language_updated: 'Tus idiomas se han configurado.'
         site_updated: 'El sitio ha sido actualizado.'
