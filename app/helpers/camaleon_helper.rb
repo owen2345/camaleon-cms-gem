@@ -14,12 +14,10 @@ module CamaleonHelper
   # content: content of the email
   # from: email figured as from
   # attachs: array of files to be attached to the email
-  # template_path: path of the template to render
+  # layout_name: path of the template to render
   # template_name: template name to render in template_path
-  def sendmail(email,subject='Tiene una notificacion',content='',from=nil,attachs=[],current_site=@current_site, template_path='html_mailer',template_name='sender')
-    from = current_site.get_option('email') if from.nil?
-    from = current_site.users.admin_scope.first.email if from.nil?
-    HtmlMailer.sender(email, "#{subject} - #{@current_site.the_title}", content, "#{@current_site.the_title}"+"<#{from}>" , attachs, root_url, current_site, template_path,template_name).deliver_now
+  def sendmail(email,subject='Tiene una notificacion',content='',from=nil,attachs=[],template_name = 'mailer', layout_name = 'mailer')
+    HtmlMailer.sender(email, subject, content, from, attachs, root_url, current_site, template_name, layout_name).deliver_now
   end
 
   # execute controller action and return response
