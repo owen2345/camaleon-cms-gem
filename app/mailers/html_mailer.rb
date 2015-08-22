@@ -30,9 +30,9 @@ class HtmlMailer < ActionMailer::Base
       mail_data[:delivery_method] = :smtp
       mail_data[:delivery_method_options] = { user_name: current_site.get_option("email_username"),
                                               password: current_site.get_option("email_pass"),
-                                              address: "localhost",
+                                              address: current_site.get_option("email_server"),
                                               port: current_site.get_option("email_port"),
-                                              domain: current_site.get_option("email_server"),
+                                              domain: "localhost",
                                               authentication: "plain",
                                               enable_starttls_auto: true
                                             }
