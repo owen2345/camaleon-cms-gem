@@ -16,6 +16,8 @@ This is the gem version of Camaleon CMS (IN TESTING)
 * Imagemagick
 
 # Installation by Terminal
+* Install Ruby on Rails 4
+  [Visit here.](http://railsapps.github.io/installing-rails.html)
 * Create your rails project
 
   ```
@@ -49,7 +51,7 @@ This is the gem version of Camaleon CMS (IN TESTING)
 * Start your server
   
   ```
-  rails server
+  rails server # and then go to your browser http://localhost:3000/
   ```
 
 # About Camaleon CMS

@@ -90,6 +90,8 @@ DEPENDENCIES
   mobu
   protected_attributes
   rufus-scheduler (~> 3.1.1)
+  thin
+  tzinfo-data
   will_paginate
   will_paginate-bootstrap
 
