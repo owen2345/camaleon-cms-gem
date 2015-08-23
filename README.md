@@ -1,4 +1,3 @@
-![](https://img.shields.io/badge/Version-0.1.0-green.svg)
 ![](https://img.shields.io/badge/Rails-4%2B-green.svg)
 ![](https://img.shields.io/badge/Ruby-1.9.3%2B-green.svg)
 ![](https://img.shields.io/badge/Mysql-100%-green.svg)
