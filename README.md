@@ -29,7 +29,7 @@
 
   ```
   # to use stable version
-  gem 'camaleon_cms', '~> 0.1.1'
+  gem 'camaleon_cms', '~> 0.1.2'
   ```
 * Install the gem
 
