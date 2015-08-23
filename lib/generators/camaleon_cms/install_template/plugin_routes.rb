@@ -229,7 +229,7 @@ class PluginRoutes
     if camaleon_gem = get_gem('camaleon_cms')
       res << File.read(File.join(camaleon_gem.gem_dir, "lib", "Gemfile")).gsub("source 'https://rubygems.org'", "")
     else
-      puts "You need to install camaleon_cms gem."
+      puts "******** Warning: You need to install camaleon_cms gem. *********"
       return ""
     end
     (self.all_themes + self.all_plugins).each do |item|

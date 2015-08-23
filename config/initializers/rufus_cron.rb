@@ -2,7 +2,7 @@ begin
   require 'rufus-scheduler'
   $scheduler = Rufus::Scheduler.singleton
   $scheduler.cron '00 05 * * *' do
-    system("rake sitemap:generate")
+    system("rake camaleon_cms:sitemap")
   end
   #cronjob for hook by site
   begin
