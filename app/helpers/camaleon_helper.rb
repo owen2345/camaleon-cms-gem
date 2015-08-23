@@ -17,7 +17,11 @@ module CamaleonHelper
   # layout_name: path of the template to render
   # template_name: template name to render in template_path
   def sendmail(email,subject='Tiene una notificacion',content='',from=nil,attachs=[],template_name = 'mailer', layout_name = 'mailer')
-    HtmlMailer.sender(email, subject, content, from, attachs, root_url, current_site, template_name, layout_name).deliver_now
+    Thread.abort_on_exception=true
+    Thread.new do
+      HtmlMailer.sender(email, subject, content, from, attachs, root_url, current_site, template_name, layout_name).deliver_now
+      ActiveRecord::Base.connection.close
+    end
   end
 
   # execute controller action and return response
