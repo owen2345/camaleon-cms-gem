@@ -7,7 +7,7 @@
 ![](https://img.shields.io/badge/Docs-90%-orange.svg)
 ![](https://img.shields.io/badge/Support-Inmediate-green.svg)
 
-[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://github.com/owen2345/Camaleon-CMS-Sample)
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/owen2345/Camaleon-CMS-Sample)
 
 ![](http://camaleon.tuzitio.com/media/132/logo2.png)
 
@@ -28,8 +28,6 @@
 * Add the gem in your Gemfile
 
   ```
-  # to use latest version of the cms
-  gem 'camaleon_cms', :git => 'https://github.com/owen2345/camaleon-cms.git'
   # to use stable version
   gem 'camaleon_cms', '~> 0.1.1'
   ```
