@@ -1,6 +1,10 @@
 require 'uri'
 h = PluginRoutes.system_info["base_domain"]
 
+# create sitemap directory
+sitemaps_dir = Rails.root.join("public", "sitemaps").to_s
+FileUtils.mkdir(sitemaps_dir) unless Dir.exist?(sitemaps_dir)
+
 Site.all.each do |site|
   site = site.decorate
   folder "sitemaps/#{site.slug}"
